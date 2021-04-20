@@ -21,6 +21,7 @@ jobs:
         with:
           gradle-version: 6.8.3
           arguments: clean test -Dthreads=3 -Dweb.remote.driver.user=${{ secrets.SELENOID_USER }} -Dweb.remote.driver.password=${{ secrets.SELENOID_PASSWORD }} -Dweb.remote.driver.domain=${{ secrets.SELENOID_DOMAIN }} allureReport
+      - name: dsd
         run: -ls -la
       - name: Download allure notification
         run: wget -O allure-notifications.jar https://github.com/qa-guru/allure-notifications/releases/download/language/allure-notifications-2.2.2.jar
