@@ -23,6 +23,7 @@ public class JsoupTests {
 
     @Test
     @Story("Проверяем тайтл главной страницы")
+    @DisplayName("Проверка тайтла страницы")
     void firstJsoupTest() {
         AtomicReference<String> title = new AtomicReference<>();
 

@@ -18,6 +18,7 @@ public class MainTests extends SelenideBase {
 
     @Test
     @Story("Проверяем тайтл главной страницы")
+    @DisplayName("Проверка тайтла страницы")
     void firstTest() {
         open("/", MainPage.class)
                 .checkTitle(testDataConfig.pagesMainTitle());

@@ -22,6 +22,7 @@ public class ApiTests extends ApiBase {
 
     @Test
     @Story("Проверяем тайтл главной страницы")
+    @DisplayName("Проверка тайтла страницы")
     void firstTest() {
         AtomicReference<String> response = new AtomicReference<>();
 
