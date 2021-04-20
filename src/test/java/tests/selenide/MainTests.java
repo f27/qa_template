@@ -5,7 +5,7 @@ import tests.selenide.pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class MainTests extends TestBase {
+public class MainTests extends SelenideBase {
     @Test
     void firstTest() {
 

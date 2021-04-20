@@ -9,7 +9,7 @@ import static helpers.AttachmentsHelper.*;
 import static helpers.DriverHelper.*;
 import static helpers.DriverHelper.isVideoOn;
 
-public class TestBase extends TestData {
+public class SelenideBase extends TestData {
 
 
     @BeforeEach
