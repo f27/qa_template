@@ -12,4 +12,7 @@ import static org.aeonbits.owner.Config.LoadType.MERGE;
 public interface TestDataConfig extends Config {
     @Key("base.url")
     String baseUrl();
+
+    @Key("pages.main.title")
+    String pagesMainTitle();
 }

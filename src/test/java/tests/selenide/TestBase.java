@@ -1,18 +1,16 @@
-package tests;
+package tests.selenide;
 
-import config.TestDataConfig;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import tests.TestData;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static helpers.AttachmentsHelper.*;
 import static helpers.DriverHelper.*;
 import static helpers.DriverHelper.isVideoOn;
 
-public class TestBase {
-    public static final TestDataConfig testDataConfig = ConfigFactory.create(TestDataConfig.class, System.getProperties());
+public class TestBase extends TestData {
+
 
     @BeforeEach
     void setup() {

@@ -18,4 +18,4 @@ jobs:
         with:
           java-version: 1.8
       - name: Test
-        run: gradle clean test -Dweb.remote.driver.user=${{ secrets.SELENOID_USER }} -Dweb.remote.driver.password=${{ secrets.SELENOID_PASSWORD }} -Dweb.remote.driver.domain=${{ secrets.SELENOID_DOMAIN }}
+        run: gradle clean test -Dthreads=3 -Dweb.remote.driver.user=${{ secrets.SELENOID_USER }} -Dweb.remote.driver.password=${{ secrets.SELENOID_PASSWORD }} -Dweb.remote.driver.domain=${{ secrets.SELENOID_DOMAIN }}
