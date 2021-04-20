@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - 'master'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "${{ SELENOID_USER }}"
