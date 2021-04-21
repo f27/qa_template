@@ -21,7 +21,7 @@ pipeline {
         credentials(name: 'REMOTE_WEB_DRIVER_CRED_ID',
                 description: 'Username and password for remote web driver',
                 defaultValue: '1933267a-4824-4f65-9bfe-d8a47445ee39',
-                credentialType: "com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl",
+                credentialType: "usernamePassword",
                 required: true)
         string(name: 'VIDEO_STORAGE_FORMAT', defaultValue: 'https://%s/video/', trim: true)
         string(name: 'TELEGRAM_CHAT_ID', defaultValue: '-548005165')
@@ -35,7 +35,9 @@ pipeline {
         stage('Test') {
             steps {
                 withAllureUpload(name: '${JOB_NAME} - #${BUILD_NUMBER}', projectId: allureTestOpsProjectId, results: [[path: 'build/allure-results']], serverId: 'allure-server', tags: 'tags') {
-                    withCredentials([usernamePassword(credentialsId: '${REMOTE_WEB_DRIVER_CRED_ID}', usernameVariable: 'REMOTE_WEB_DRIVER_USERNAME', passwordVariable: 'REMOTE_WEB_DRIVER_PASSWORD')]) {
+                    withCredentials([
+                            usernamePassword(credentialsId: '${REMOTE_WEB_DRIVER_CRED_ID}', usernameVariable: 'REMOTE_WEB_DRIVER_USERNAME', passwordVariable: 'REMOTE_WEB_DRIVER_PASSWORD')
+                    ]) {
                         sh 'gradle clean ${TASK}' +
                                 ' -Dthreads="${THREADS}"' +
                                 ' -Dweb.browser="${BROWSER}"' +
