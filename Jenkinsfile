@@ -39,7 +39,7 @@ pipeline {
                     withCredentials([
                             usernamePassword(credentialsId: '${REMOTE_WEB_DRIVER_CRED_ID}', usernameVariable: 'REMOTE_WEB_DRIVER_USERNAME', passwordVariable: 'REMOTE_WEB_DRIVER_PASSWORD')
                     ]) {
-                        sh 'echo ' + GIT_URL.replaceAll("_","\\_")
+                        sh 'echo ' + GIT_URL.replaceAll("_","-")
 
                     }
                 }
