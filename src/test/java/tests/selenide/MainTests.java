@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import tests.selenide.pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.parameter;
 
 @Owner("f27")
 @Tag("selenide")
@@ -20,7 +21,7 @@ public class MainTests extends SelenideBase {
     @Story("Проверяем тайтл главной страницы")
     @DisplayName("Проверка тайтла страницы")
     void firstTest() {
-
+        parameter("properties", System.getProperties());
         open("/", MainPage.class)
                 .checkTitle(testDataConfig.pagesMainTitle());
     }
