@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import tests.selenide.pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
-import static io.qameta.allure.Allure.parameter;
 
 @Owner("f27")
 @Tag("selenide")
