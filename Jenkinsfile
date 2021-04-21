@@ -20,7 +20,7 @@ pipeline {
                 defaultValue: '1933267a-4824-4f65-9bfe-d8a47445ee39',
                 credentialType: "com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl",
                 required: true)
-        string(name: 'VIDEO_STORAGE_FORMAT', defaultValue: 'https://%s/video/', trin: true)
+        string(name: 'VIDEO_STORAGE_FORMAT', defaultValue: 'https://%s/video/', trim: true)
         string(name: 'TELEGRAM_CHAT_ID', defaultValue: '-548005165')
         credentials(name: 'TELEGRAM_BOT_TOKEN_ID',
                 description: 'Telegram bot token for sending notifications in telegram chat',
