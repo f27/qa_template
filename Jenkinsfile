@@ -1,9 +1,9 @@
 def allureFile = 'allure-notifications.jar'
 def allureNotificationsUrl = 'https://github.com/qa-guru/allure-notifications/releases/download/fr/allure-notifications-2.2.3.jar'
 def allureTestOpsProjectId = '164'
-GIT_URL = GIT_URL.replaceAll("_",'\\\\_')
 
 pipeline {
+    GIT_URL = GIT_URL.replaceAll("_",'\\\\_')
     agent any
     tools {
         gradle "Gradle 6.8.3"
