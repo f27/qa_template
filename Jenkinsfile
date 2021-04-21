@@ -39,7 +39,8 @@ pipeline {
                     withCredentials([
                             usernamePassword(credentialsId: '${REMOTE_WEB_DRIVER_CRED_ID}', usernameVariable: 'REMOTE_WEB_DRIVER_USERNAME', passwordVariable: 'REMOTE_WEB_DRIVER_PASSWORD')
                     ]) {
-                        sh 'gradle clean ${TASK}' +
+                        sh 'echo ${GIT_URL.replaceAll("_","\\\\_")}'
+                        sh '.gradle clean ${TASK}' +
                                 ' -Dthreads="${THREADS}"' +
                                 ' -Dweb.browser="${BROWSER}"' +
                                 ' -Dweb.browser.version="${BROWSER_VERSION}"' +
