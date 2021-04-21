@@ -1,6 +1,7 @@
 def allureFile = 'allure-notifications.jar'
 def allureNotificationsUrl = 'https://github.com/qa-guru/allure-notifications/releases/download/fr/allure-notifications-2.2.3.jar'
 def allureTestOpsProjectId = '164'
+GIT_URL = GIT_URL.replaceAll("_",'\\\\_')
 
 pipeline {
     agent any
@@ -66,7 +67,7 @@ pipeline {
                         " -Dchat.id='${TELEGRAM_CHAT_ID}'" +
                         " -Dbot.token='${TELEGRAM_BOT_TOKEN}'" +
                         " -Dbuild.launch.name='${JOB_NAME} - #${BUILD_NUMBER}'" +
-                        " -Dbuild.env='" + GIT_URL.replaceAll("_",'\\\\_') + "'" +
+                        " -Dbuild.env='${GIT_URL}'" +
                         " -Dbuild.report.link='${BUILD_URL}'" +
                         " -Dproject.name='${JOB_BASE_NAME}'" +
                         " -Dlang='ru'" +
