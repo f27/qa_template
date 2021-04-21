@@ -4,7 +4,11 @@ def allureTestOpsProjectId = '164'
 
 pipeline {
     environment {
-        GIT_URL = GIT_URL.replaceAll("_",'\\\\_')
+        //while allure-notifications didn't fix markdown
+        GIT_URL = GIT_URL.replaceAll("_", '\\\\_')
+        JOB_NAME = JOB_NAME.replaceAll("_", '\\\\_')
+        BUILD_URL = BUILD_URL.replaceAll("_", '\\\\_')
+        JOB_BASE_NAME = JOB_BASE_NAME.replaceAll("_", '\\\\_')
     }
     agent any
     tools {
