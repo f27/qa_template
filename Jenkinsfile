@@ -66,7 +66,7 @@ pipeline {
                         " -Dchat.id='${TELEGRAM_CHAT_ID}'" +
                         " -Dbot.token='${TELEGRAM_BOT_TOKEN}'" +
                         " -Dbuild.launch.name='${JOB_NAME} - #${BUILD_NUMBER}'" +
-                        " -Dbuild.env='${GIT_URL}'" +
+                        " -Dbuild.env='${GIT_URL.replaceAll("_","\\_")}'" +
                         " -Dbuild.report.link='${BUILD_URL}'" +
                         " -Dproject.name='${JOB_BASE_NAME}'" +
                         " -Dlang='ru'" +
