@@ -11,6 +11,7 @@ pipeline {
         githubPush()
     }
     parameters {
+        string(name: 'THREADS', defaultValue: '2', trim: true)
         choice(name: 'TASK', choices: ['test', 'selenide', 'jsoup', 'api'], description: 'test - run all tests\nselenide - run tests with selenide\njsoup - run tests with jsoup parser')
         choice(name: 'BROWSER', choices: ['chrome', 'opera', 'firefox'], description: '')
         string(name: 'BROWSER_VERSION', defaultValue: '89', trim: true)
