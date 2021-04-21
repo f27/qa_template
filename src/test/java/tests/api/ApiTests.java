@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ApiTests extends ApiBase {
 
     @Test
-    @Story("Проверяем тайтл главной страницы")
+    @Story("Проверяем элементы страницы")
     @DisplayName("Проверка тайтла страницы")
     void firstTest() {
         AtomicReference<String> response = new AtomicReference<>();

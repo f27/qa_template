@@ -22,7 +22,7 @@ import static tests.jsoup.JsoupBase.baseUrl;
 public class JsoupTests {
 
     @Test
-    @Story("Проверяем тайтл главной страницы")
+    @Story("Проверяем элементы страницы")
     @DisplayName("Проверка тайтла страницы")
     void firstJsoupTest() {
         AtomicReference<String> title = new AtomicReference<>();

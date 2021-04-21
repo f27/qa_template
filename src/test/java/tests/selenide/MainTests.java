@@ -18,7 +18,7 @@ import static io.qameta.allure.Allure.parameter;
 public class MainTests extends SelenideBase {
 
     @Test
-    @Story("Проверяем тайтл главной страницы")
+    @Story("Проверяем элементы страницы")
     @DisplayName("Проверка тайтла страницы")
     void firstTest() {
 
