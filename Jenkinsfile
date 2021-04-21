@@ -3,6 +3,9 @@ def allureNotificationsUrl = 'https://github.com/qa-guru/allure-notifications/re
 def allureTestOpsProjectId = '164'
 
 pipeline {
+    environment {
+        GIT_URL = GIT_URL.replaceAll("_",'\\\\_')
+    }
     agent any
     tools {
         gradle "Gradle 6.8.3"
@@ -64,7 +67,6 @@ pipeline {
         always {
             allure includeProperties: false, jdk: '', results: [[path: 'build/allure-results']]
             withCredentials([string(credentialsId: '${TELEGRAM_BOT_TOKEN_ID}', variable: 'TELEGRAM_BOT_TOKEN')]) {
-                def GIT_URL = GIT_URL.replaceAll("_",'\\\\_')
                 sh "if [ ! -f '${allureFile}' ]; then wget -O '${allureFile}' '${allureNotificationsUrl}'; fi"
                 sh "java" +
                         " -Dmessenger='telegram'" +
