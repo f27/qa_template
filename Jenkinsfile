@@ -3,7 +3,7 @@ def allureNotificationsUrl = 'https://github.com/qa-guru/allure-notifications/re
 def allureTestOpsProjectId = '164'
 
 pipeline {
-    GIT_URL = GIT_URL.replaceAll("_",'\\\\_')
+    def GIT_URL = GIT_URL.replaceAll("_",'\\\\_')
     agent any
     tools {
         gradle "Gradle 6.8.3"
