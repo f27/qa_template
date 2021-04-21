@@ -68,3 +68,21 @@ tasks.withType(Test) {
 test {
     useJUnitPlatform()
 }
+
+task selenide(type: Test) {
+    useJUnitPlatform {
+        includeTags 'selenide'
+    }
+}
+
+task jsoup(type: Test) {
+    useJUnitPlatform {
+        includeTags 'jsoup'
+    }
+}
+
+task api(type: Test) {
+    useJUnitPlatform {
+        includeTags 'api'
+    }
+}
