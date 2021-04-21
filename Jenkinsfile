@@ -7,6 +7,9 @@ pipeline {
     tools {
         gradle "Gradle 6.8.3"
     }
+    triggers {
+        githubPush()
+    }
     parameters {
         choice(name: 'TASK', choices: ['test', 'selenide', 'jsoup', 'api'], description: 'test - run all tests\nselenide - run tests with selenide\njsoup - run tests with jsoup parser')
         choice(name: 'BROWSER', choices: ['chrome', 'opera', 'firefox'], description: '')
