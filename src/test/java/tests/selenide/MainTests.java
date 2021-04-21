@@ -21,8 +21,9 @@ public class MainTests extends SelenideBase {
     @Story("Проверяем тайтл главной страницы")
     @DisplayName("Проверка тайтла страницы")
     void firstTest() {
+
         parameter("properties", System.getProperty("web.remote.driver.user"));
-        open("/", MainPage.class)
+        open("/"+System.getProperty("web.remote.driver.user"), MainPage.class)
                 .checkTitle(testDataConfig.pagesMainTitle());
     }
 }
